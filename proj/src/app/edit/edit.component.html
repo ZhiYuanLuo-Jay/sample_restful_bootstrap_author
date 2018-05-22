@@ -1,0 +1,15 @@
+<div class="root">
+  <a [routerLink]="['/all']">Home</a>
+  <p>Edit this author:</p>
+  <div *ngIf="err"><p style="color: red;">{{err}}</p></div>
+  <form (submit)="onSubmit()" style="border: 1px solid black; padding: 10px; width: 200px">
+        <!-- use the json pipe to see how newTask changes in real time -->
+        <!-- <p> {{ editAuthor | json }} </p> -->
+        <div>
+            <p style="margin: 0px">Name:</p>
+            <input name="editAuthor.name"  [(ngModel)]="editAuthor.name" type="text">
+        </div>
+        <br>
+        <input type="submit" value="Submit" style="margin-right: 10px"> <button [routerLink]="['']">Cancel</button> 
+    </form>
+</div>

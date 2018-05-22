@@ -1,0 +1,24 @@
+<div class="root">
+  <a [routerLink]="['/new']">Add an author</a>
+  <!-- <a [routerLink]="['new']">Add a pet to the shelter</a> -->
+  <!-- <button [routerLink]="['/alpha']">Load Alpha</button> -->
+
+  <h3>We have quotes by:</h3>
+  <table class="table table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th>Authors</th>
+        <th>Actions available </th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let a of authorList">
+          <td>{{a.name}}</td>
+          <td><a [routerLink]="['/edit', a._id]">Edit</a> | <a (click)="onRemove(a._id)" >Delete</a></td>
+        </tr>
+    <tbody>
+  </table>
+
+</div>
+
